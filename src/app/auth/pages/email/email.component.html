@@ -1,0 +1,79 @@
+
+<div>
+  <div *ngIf="!resetSuccess" >
+    <h2 >Restablecer Contraseña</h2><br>
+    <div *ngIf="!resetError">
+      <p>Por favor, introduce tu nueva contraseña:</p>
+      <input type="password" [(ngModel)]="newPassword" placeholder="Nueva Contraseña" >
+      <button (click)="onResetPassword()">Restablecer Contraseña</button>
+    </div>
+    <div *ngIf="resetError">
+      Ha ocurrido un error al restablecer la contraseña. Por favor, inténtalo de nuevo.
+    </div>
+  </div>
+  <div *ngIf="resetSuccess">
+    Contraseña restablecida con éxito.
+  </div>
+</div>
+
+
+<style>
+ 
+ /* Estilo para el contenedor principal */
+div {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #FFA500; /* Cambiado a color naranja (#FFA500) */
+  border-radius: 5px;
+  background-color: white; /* Cambiado a color blanco (#ffffff) */
+  text-align: center;
+}
+
+/* Estilo para el título h2 */
+h2 {
+  color: #FFA500; /* Cambiado a color naranja (#FFA500) */
+}
+
+/* Estilo para el párrafo */
+p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Estilo para el input de contraseña */
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+/* Estilo para el botón */
+button {
+  background-color: #FFA500; /* Cambiado a color naranja (#FFA500) */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FF8C00; /* Cambiado a un tono más oscuro de naranja (#FF8C00) en hover */
+}
+
+/* Estilo para el mensaje de error */
+div[resetError] {
+  color: #FF8C00;
+  margin-top: 10px;
+}
+
+/* Estilo para el mensaje de éxito */
+div[resetSuccess] {
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+
+</style>

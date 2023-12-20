@@ -1,0 +1,141 @@
+
+
+<div class="w-screen h-screen bg-white sm:bg-gray-50 relative">
+
+  <div class="absolute w-full h-full hidden sm:block">
+    <img
+      src="/assets/sources/undraw_pet.png"
+      alt="logo1"
+      class="absolute w-96 lg:w-96 right-20 mx-20 bottom-20"
+    />
+    <img
+      src="/assets/sources/vector-right.png"
+      alt="logo2"
+      class="absolute w-36 lg:w-36 h-screen right-0 bottom-0"
+    />
+  </div>
+  <div class="relative w-full sm:w-7/12 lg:w-4/12 m-auto">
+    <header class="pt-6 pb-2 flex justify-center">
+      <img class="w-2/2" src="/assets/sources/crear_cuenta.png" alt="logo" />
+    </header>
+
+    <header class="flex justify-center">
+      <img class="" src="/assets/sources/social.png" alt="logo" />
+    </header>
+  </div>
+
+  <div class="bg-white mx-20 mt-11 mb-4 w-1/2">
+    <div class="mb-4">
+      <h1 class="bold-semibold text-center">Crea tu cuenta</h1>
+      
+<form (ngSubmit)="onSubmit()" class="modern-form" [formGroup]="form">
+      <div class="space-y-4">
+        <!-- Vinculación de campos de entrada con [(ngModel)] -->
+        <div class="relative">
+          <input
+            id="name" 
+            formControlName="name"
+            type="text"
+            placeholder="Enter Name"
+            maxlength="100"
+            minlength="3"
+            required
+            class="bg-gray-100 p-3 border-gray-300 w-full mb-3 rounded"
+          />
+          <small formError
+          [touched]="Name.touched"
+          [dirty]="Name.dirty"
+          [errors]="Name.errors"
+          ></small>
+          
+        </div>
+        <div class="relative">
+          <input
+            id="lastname" 
+            formControlName="lastname"
+            type="text"
+            placeholder="Enter Last Name"
+            maxlength="100"
+            minlength="3"
+            required
+            class="bg-gray-100 p-3 border-gray-300 w-full mb-3 rounded"
+          />
+          <small formError 
+          [touched]="LastName.touched" 
+          [dirty]="LastName.dirty" 
+          [errors]="LastName.errors"></small>
+        </div>
+
+        <div class="relative">
+          <input 
+            id="email" 
+            formControlName="email"
+            type="email"
+            placeholder="Enter Email"
+            maxlength="100"
+            minlength="3"
+            required
+            class="bg-gray-100 p-3 border-gray-300 w-full mb-3 rounded"
+          />
+          <small formError 
+          [touched]="Email.touched" 
+          [dirty]="Email.dirty" 
+          [errors]="Email.errors"></small>
+        </div>
+        <div class="relative">
+          <input
+            id="password" 
+            formControlName="password"
+            type="password"
+            placeholder="Enter Password"
+            maxlength="15"
+            minlength="3"
+            required
+        
+            class="bg-gray-100 p-3 border-gray-300 mb-3 w-full rounded"
+          />
+          <small formError 
+          [touched]="Password.touched" 
+          [dirty]="Password.dirty" 
+          [errors]="Password.errors"></small>
+        </div>
+
+        <div class="relative">
+          <select  name="select"
+            formControlName="rol"
+            class="bg-gray-100 p-3 border-gray-300 mb-3 w-full rounded"
+          >
+            <!-- <option value="" selected>Enter Role</option> -->
+            <option value="donante">Donante</option>
+            <option value="adoptante">Adoptante</option>
+          </select>
+        </div> 
+
+         <!-- <div class="relative">
+          <p-dropdown
+            [(ngModel)]="user.rol"
+            [options]="roles"
+            optionLabel="label"
+            placeholder="Enter Role"
+            [styleClass]="'custom-dropdown-style'"
+          ></p-dropdown>
+        </div>  -->
+
+        <div class="text-center">
+          <button
+            type="submit"
+            mat-button
+            mat-flat-button
+            class="w-full p-3"
+            style="background-color: #f7924a"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+</form>
+    </div>
+  </div>
+
+</div>
+

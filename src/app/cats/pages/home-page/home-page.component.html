@@ -1,0 +1,75 @@
+<div class="container-fluid mt-12">
+  <div class="row">
+    <div class="col-12 mt-5 col-sm-6">
+      <img
+        src="/assets/sources/adopta.png"
+        class="img-fluid mx-5 w-1/2"
+        alt="..."
+      />
+      <p class="text-xl mt-5 text-gray-600 tracking-widest">
+        Al adoptar, estás brindando un hogar a un animal que de otra manera
+        podría estar en un refugio o en la calle. Muchos animales abandonados o
+        maltratados esperan una segunda oportunidad, y adoptarlos significa
+        salvar sus vidas.
+      </p>
+    </div>
+    <div class="col-12 col-sm-6">
+      <img
+        src="/assets/sources/bg-cat.png"
+        class="img-fluid w-7/12 h-7/12 mx-auto"
+        alt="..."
+      />
+    </div>
+    <button-lg routerLink="/cats/list">Ver mascota</button-lg>
+    <img
+      src="/assets/sources/social.png"
+      alt="redes sociales"
+      class="w-40 mx-40"
+    />
+  </div>
+</div>
+
+
+
+<p-dialog [(visible)]="display" [style]="{ 'width': '60%', 'box-shadow': 'none', 'background-color': 'transparent', 'border': 'none', 'padding': '0', 'margin': '0' }" [modal]="false" [showHeader]="false"> 
+  <div class="modal-content">
+    <h1 class="text-5xl text-center text-white" style="font-family: roboto">Terminos y Condiciones</h1>
+    <p class="w-2/3 mx-auto text-base text-justify text-white">
+      "Al utilizar este sitio web, aceptas los siguientes términos y condiciones. La adopción de mascotas está sujeta a la aprobación de la organización, reservándose el derecho de evaluar la idoneidad del adoptante. Los adoptantes deben ser mayores de 18 años y comprometerse a proporcionar un hogar adecuado, cuidados y seguimiento veterinario. Puede aplicarse una tarifa de adopción no reembolsable. La información personal se manejará según nuestra política de privacidad. Se alienta a los adoptantes a devolver la mascota en lugar de abandonarla. Este acuerdo está regido por las leyes locales. La organización se reserva el derecho de actualizar estos términos en cualquier momento."
+    </p>
+    <div class="text-center">
+      <a (click)="showDialog()" class="border-2 rounded-full text-lg p-2 text-white">Acepto</a>
+      <a routerLink="/conditions/denie" class="border-2 rounded-full text-lg p-2 mx-20 text-white">No Acepto</a>
+    </div>
+  </div>
+</p-dialog>
+
+<style>
+   /* .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  } */
+
+  .ui-dialog {
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ui-dialog-content {
+    padding: 0 !important;
+  }
+
+  .modal-content {
+    background-color: #f7924a;
+    border-radius: 3rem; /* Ajusta el valor del radio según sea necesario */
+    padding: 20px;
+  }
+</style>

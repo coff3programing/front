@@ -1,0 +1,151 @@
+<!-- list-page.component.html -->
+
+<div class="custom-title">
+  <h2>Gestión de gatos</h2>
+</div>
+
+<div class="custom-table-responsive">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Género</th>
+        <th scope="col">Tamaño</th>
+        <th scope="col">Raza</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Personalidad</th>
+        <th scope="col">Apodo</th>
+        <th scope="col">Eliminar</th>
+        <!-- Agrega aquí más columnas para otros detalles del gato -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cat of cats">
+        <td>{{ cat.name }}</td>
+        <td>{{ cat.gender }}</td>
+        <td>{{ cat.size }}</td>
+        <td>{{ cat.breed }}</td>
+        <td>{{ cat.age }}</td>
+        <td>{{ cat.personality }}</td>
+        <td>{{ cat.moniker }}</td>
+        <td>
+          <button (click)="showDialog(cat.id)" class="custom-button">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- p-dialog para confirmar la eliminación -->
+<p-dialog header="Confirmación" [(visible)]="displayDialog" [modal]="true" [responsive]="true">
+  <div>
+    ¿Deseas eliminar este gato?
+  </div>
+  <div class="button-container">
+    <button class="btn btn-danger" (click)="onAccept()">Aceptar</button>
+    <button class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+  </div>
+</p-dialog>
+
+
+<my-menu></my-menu>
+
+<style>
+  /* styles.css o list-page.component.css */
+  .custom-table-responsive {
+    overflow-x: auto;
+    /* Hace que la tabla sea responsive horizontalmente si es necesario */
+    margin: auto;
+    /* Centra la tabla en la página */
+  }
+
+  .custom-table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    /* Fondo blanco con naranja claro */
+    border-radius: 15px;
+    /* Bordes redondeados */
+    margin: auto;
+    /* Centra la tabla en el contenedor */
+  }
+
+  .custom-table th,
+  .custom-table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ffa96c;
+    /* Borde con color naranja */
+  }
+
+  .custom-table th {
+    background-color: #f7924a;
+    /* Color naranja para la cabecera */
+    color: #fff;
+  }
+
+  .custom-table tbody tr:hover {
+    background-color: #fde1c6;
+    /* Cambia el color del hover a anaranjado claro */
+  }
+
+  .custom-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .custom-title h2 {
+    color: #f7924a;
+    /* Color naranja */
+    font-size: 24px;
+  }
+
+  /* Agrega estos estilos en tu archivo CSS o en el archivo de estilos específico de Angular */
+
+  .confirmation-dialog-content {
+    background-color: #ffffff;
+    /* Fondo blanco */
+    padding: 15px;
+  }
+
+  .button-container {
+    margin-top: 15px;
+  }
+
+  .button-container button {
+    margin-right: 15px;
+  }
+
+  .btn {
+    color: #ffffff;
+    /* Letras blancas */
+  }
+
+  .btn-danger {
+    background-color: #f7924a;
+    /* Fondo naranja */
+  }
+
+  .btn-secondary {
+    background-color: #ffffff;
+    /* Fondo blanco */
+    color: #f7924a;
+    /* Letras naranjas */
+  }
+
+  /* Agrega estos estilos en tu archivo CSS o en el archivo de estilos específico de Angular */
+
+.custom-button {
+  background-color: #f7924a; /* Fondo naranja */
+  color: #fff; /* Letras blancas */
+  border: none; /* Sin borde */
+  padding: 8px 12px; /* Relleno interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.custom-button:hover {
+  background-color: #e88133; /* Cambia el color al pasar el mouse para un efecto visual */
+}
+
+</style>

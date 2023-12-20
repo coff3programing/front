@@ -1,0 +1,52 @@
+<div *ngIf="display" class="overlay"></div>
+
+<img src="../../../../assets/sources/welcome_cats.png" alt="logo1" class="sm:w-screen md:w-1/3 mx-auto" />
+
+<rol-button>Adopta tu mascota</rol-button>
+<rol-button>Dona una mascota</rol-button>
+
+<p-dialog [(visible)]="display" [style]="{ 'width': '60%', 'box-shadow': 'none', 'background-color': 'transparent', 'border': 'none', 'padding': '0', 'margin': '0' }" [modal]="false" [showHeader]="false"> 
+  <div class="modal-content">
+    <h1 class="text-5xl text-center text-white" style="font-family: roboto">Terminos y Condiciones</h1>
+    <p class="w-2/3 mx-auto text-base text-justify text-white">
+      "Al utilizar este sitio web, aceptas los siguientes términos y condiciones. La adopción de mascotas está sujeta a la aprobación de la organización, reservándose el derecho de evaluar la idoneidad del adoptante. Los adoptantes deben ser mayores de 18 años y comprometerse a proporcionar un hogar adecuado, cuidados y seguimiento veterinario. Puede aplicarse una tarifa de adopción no reembolsable. La información personal se manejará según nuestra política de privacidad. Se alienta a los adoptantes a devolver la mascota en lugar de abandonarla. Este acuerdo está regido por las leyes locales. La organización se reserva el derecho de actualizar estos términos en cualquier momento."
+    </p>
+    <div class="text-center">
+      <a (click)="showDialog()" routerLink="/conditions/welcome" class="border-2 rounded-full text-lg p-2 text-white">Acepto</a>
+      <a routerLink="/conditions/denie" class="border-2 rounded-full text-lg p-2 mx-20 text-white">No Acepto</a>
+    </div>
+  </div>
+</p-dialog>
+
+<style>
+   /* .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  } */
+
+  .ui-dialog {
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ui-dialog-content {
+    padding: 0 !important;
+  }
+
+  .modal-content {
+    background-color: #f7924a;
+    border-radius: 3rem; /* Ajusta el valor del radio según sea necesario */
+    padding: 20px;
+  }
+</style>
+
+
+

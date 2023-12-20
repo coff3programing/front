@@ -1,0 +1,79 @@
+<!-- list-page.component.html -->
+
+<div class="custom-title">
+  <h2>Gatos en Proceso de Adopción</h2>
+</div>
+
+
+<div class="custom-table-responsive">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Género</th>
+        <th scope="col">Tamaño</th>
+        <th scope="col">Raza</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Personalidad</th>
+        <th scope="col">Apodo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cat of cats">
+        <td>{{ cat.name }}</td>
+        <td>{{ cat.gender }}</td>
+        <td>{{ cat.size }}</td>
+        <td>{{ cat.breed }}</td>
+        <td>{{ cat.age }}</td>
+        <td>{{ cat.personality }}</td>
+        <td>{{ cat.moniker }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<my-menu></my-menu>
+
+<style>
+  /* styles.css o list-page.component.css */
+.custom-table-responsive {
+  overflow-x: auto; /* Hace que la tabla sea responsive horizontalmente si es necesario */
+  margin: auto; /* Centra la tabla en la página */
+}
+
+.custom-table {
+  width: 80%;
+  border-collapse: collapse;
+  background-color: #ffffff; /* Fondo blanco con naranja claro */
+  border-radius: 15px; /* Bordes redondeados */
+  margin: auto; /* Centra la tabla en el contenedor */
+}
+
+.custom-table th, .custom-table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ffa96c; /* Borde con color naranja */
+}
+
+.custom-table th {
+  background-color: #f7924a; /* Color naranja para la cabecera */
+  color: #fff;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #fde1c6; /* Cambia el color del hover a anaranjado claro */
+}
+
+/* styles.css o list-page.component.css */
+.custom-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.custom-title h2 {
+  color: #f7924a; /* Color naranja */
+  font-size: 24px;
+}
+
+</style>

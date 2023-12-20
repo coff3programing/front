@@ -1,0 +1,22 @@
+<div class="container mt-4 w-full h-full">
+  <img
+    src="/assets/sources/logo.png"
+    class="mx-3 w-1/4 hidden sm:block"
+    alt="Cat Logo"
+  />
+  <div class="d-flex justify-content-end mr-8">
+    <input
+      type="text"
+      placeholder="Buscar"
+      class="rounded-full p-2.5 shadow-sm w-fluid text-slate-950 w-60"
+      style="border: none; outline: none; background: #fbd2b6"
+    />
+  </div>
+  <router-outlet />
+</div>
+<style>
+  input::placeholder {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+</style>

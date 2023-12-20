@@ -1,0 +1,131 @@
+<!-- donadores-page.component.html -->
+
+<div class="custom-title">
+  <h2>Gestion de Donadores</h2>
+</div>
+
+<div class="custom-table-responsive">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Correo Electrónico</th>
+        <th>Eliminar</th>    
+        <!-- Agrega aquí más columnas según sea necesario -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let donador of donadores">
+        <td>{{ donador.name }}</td>
+        <td>{{ donador.lastname }}</td>
+        <td>{{ donador.email }}</td>
+        <td><button (click)="showDialog(donador.id)" class="custom-button">Eliminar</button></td>
+        
+        <!-- Agrega aquí más celdas según sea necesario -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- p-dialog para confirmar la eliminación -->
+<p-dialog header="Confirmación" [(visible)]="displayDialog" [modal]="true" [responsive]="true">
+  <div>
+    ¿Deseas eliminar este donaante?
+  </div>
+  <div class="button-container">
+    <button class="btn btn-danger" (click)="onAccept()">Aceptar</button>
+    <button class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+  </div>
+</p-dialog>
+
+<my-menu></my-menu>
+
+<style>
+  /* styles.css o en un archivo específico para los estilos del componente */
+.custom-table-responsive {
+  overflow-x: auto;
+  margin: auto;
+}
+
+.custom-table {
+  width: 80%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.custom-table th, .custom-table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ffa96c;
+}
+
+.custom-table th {
+  background-color: #f7924a;
+  color: #fff;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #fde1c6;
+}
+
+.custom-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.custom-title h2 {
+  color: #f7924a;
+  font-size: 24px;
+}
+
+ /* Agrega estos estilos en tu archivo CSS o en el archivo de estilos específico de Angular */
+
+ .confirmation-dialog-content {
+    background-color: #ffffff;
+    /* Fondo blanco */
+    padding: 15px;
+  }
+
+  .button-container {
+    margin-top: 15px;
+  }
+
+  .button-container button {
+    margin-right: 15px;
+  }
+
+  .btn {
+    color: #ffffff;
+    /* Letras blancas */
+  }
+
+  .btn-danger {
+    background-color: #f7924a;
+    /* Fondo naranja */
+  }
+
+  .btn-secondary {
+    background-color: #ffffff;
+    /* Fondo blanco */
+    color: #f7924a;
+    /* Letras naranjas */
+  }
+
+  /* Agrega estos estilos en tu archivo CSS o en el archivo de estilos específico de Angular */
+
+.custom-button {
+  background-color: #f7924a; /* Fondo naranja */
+  color: #fff; /* Letras blancas */
+  border: none; /* Sin borde */
+  padding: 8px 12px; /* Relleno interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.custom-button:hover {
+  background-color: #e88133; /* Cambia el color al pasar el mouse para un efecto visual */
+}
+</style>
